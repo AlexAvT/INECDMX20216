@@ -1,0 +1,220 @@
+﻿
+					Programa de Resultados Electorales Preliminares 2016
+					____________________________________________________
+
+
+A. El Programa de Resultados Preliminares permite la descarga de la base de datos a través de un archivo tar.gz que contienen archivos CSV.
+
+B. El archivo de texto plano contiene todas las actas de base de datos y se nombran como CIUDAD DE MÉXICO_diputados_2016.csv
+
+C. La información en el archivo de texto plano se divide en dos secciones:
+
+   a. Primera sección, encabezado: 
+
+     i.	Se presenta la hora y la fecha de la generación de reportes, estas corresponden a las que aparece en los reportes HTML, ejemplo:
+        19:00 horas (UTC-5)
+        Domingo 5 de junio de 2016
+
+     ii.Se presentan los nombres de los datos del acta que se están incluyendo, separados por pipes |, ejemplo:
+
+		ACTAS_ESPERADAS|ACTAS_FUERA_DE_CATÁLOGO|ACTAS_REGISTRADAS|ACTAS_CAPTURADAS|PORCENTAJE_ACTAS_CAPTURADAS|ACTAS_CONTABILIZADAS|PORCENTAJE_ACTAS_CONTABILIZADAS|PORCENTAJE_ACTAS_CON_INCONSISTENCIAS|ACTAS_NO_CONTABILIZADAS|PARTICIPACION_CIUDADANA
+
+        La descripción de cada campo se muestra a continuación:
+		
+		1. ACTAS_ESPERADAS - Número de Actas correspondiente al número de casillas aprobadas por el Consejo que corresponda. Es un número constante por cargo de elección. Este conjunto de Actas conforma el Catálogo de Actas Esperadas.
+
+		2. ACTAS_FUERA_DE_CATÁLOGO - Número de Actas registradas en el sistema informático que no corresponden con la lista de casillas aprobadas, es decir, algún dato relacionado con la identificación de las AEC: entidad federativa, distrito electoral, sección, tipo y número de casilla (no aplica para casillas básicas); y, en su caso, municipio o delegación, en su conjunto no coinciden con la lista de actas de casillas aprobadas. Estas Actas no se deben considerar en el cálculo del porcentaje de Actas con inconsistencias debido a que por definición, éstas no pertenecen al conjunto de Actas esperadas.
+
+		3. ACTAS_REGISTRADAS - . Número de Actas que han sido acopiadas y, al momento del corte de información, se asientan en el sistema, sean contabilizadas o no. Incluye las actas fuera de catálogo.
+
+		4. ACTAS_CAPTURADAS - Número de Actas registradas al momento del corte de información, que se encuentran dentro del catálogo de actas esperadas, sean contabilizadas o no. Excluyen las actas fuera de catálogo. 
+
+		5. PORCENTAJE_ACTAS_CAPTURADAS - Porcentaje de actas capturadas al momento del corte, calculado respecto del total de actas esperadas. Los decimales deberán ser expresados a cuatro posiciones; el decimal de la cuarta posición deberá truncarse y no redondearse.
+
+		6. ACTAS_CONTABILIZADAS - Total de Actas en las que los datos de identificación no presentan alguna omisión, ilegibilidad o error en alguno de los campos correspondientes a la identificación del AEC (Acta de Escrutinio y Cómputo).
+
+		7. PORCENTAJE_ACTAS_CONTABILIZADAS - Porcentaje de actas, calculado respecto del total de actas esperadas, que al momento del corte han sido contabilizadas. Los decimales deberán ser expresados a cuatro posiciones y el decimal de la cuarta posición deberá truncarse, no redondearse.
+
+		8. PORCENTAJE_ACTAS_CON_INCONSISTENCIAS - Porcentaje de actas que presentan alguna inconsistencia en el apartado donde se asientan los votos, para un partido, para candidato común (en el supuesto de que la legislación local lo contemple), para una coalición, para un candidato independiente, para candidatos no registrados y votos nulos, así como las actas en las que la suma de todos los votos asentados en el Acta PREP excede el número de ciudadanos en la lista nominal correspondiente a esa casilla. Tal proporción debe calcularse respecto al total de actas esperadas. Los decimales deberán ser expresados a cuatro posiciones; el decimal de la cuarta posición deberá truncarse y no redondearse.
+
+		9. ACTAS_NO_CONTABILIZADAS - Total de Actas en las que los datos de identificación presentan omisión o ilegibilidad en todos los campos en los que se asientan los votos por partidos políticos, coaliciones, candidaturas comúnes, candidatos independientes, candidatos no registrados y votos nulos. 
+
+		10. PARTICIPACION_CIUDADANA - Porcentaje de ciudadanos que votaron con base en la lista nominal agregada de las Actas PREP contabilizadas. 
+
+
+   b.  Segunda sección, datos del acta. Corresponde a los datos del acta extraídos de la base de datos, cada línea corresponde a una acta, están separados por pipes |. Los datos son los siguientes:
+
+      ID_ESTADO|ESTADO|ID_DISTRITO|DISTRITO|SECCION|ID_CASILLA|TIPO_CASILLA|EXT_CONTIGUA|UBICACION_CASILLA|TIPO_ACTA|NUM_BOLETAS_SOBRANTES|TOTAL_CIUDADANOS_VOTARON|NUM_BOLETAS_EXTRAIDAS|CAND_IND_01|CAND_IND_02|CAND_IND_03|CAND_IND_04|CAND_IND_05|CAND_IND_06|CAND_IND_07|CAND_IND_08|CAND_IND_09|CAND_IND_10|CAND_IND_11|CAND_IND_12|CAND_IND_13|CAND_IND_14|CAND_IND_15|CAND_IND_16|CAND_IND_17|CAND_IND_18|CAND_IND_19|CAND_IND_20|CAND_IND_21|PAN|PRI|PRD|PVEM|PT|MOVIMIENTO_CIUDADANO|NUEVA_ALIANZA|MORENA|ENCUENTRO_SOCIAL|NULOS|TOTAL_VOTOS|LISTA_NOMINAL|OBSERVACIONES|CONTABILIZADA|CRYT1|SHA|HORA_ACOPIO|HORA_CAPTURA|HORA_REGISTRO
+
+      La descripción de cada campo se muestra a continuación:
+
+	1. ID_ESTADO - Número de la Entidad Federativa.
+	
+	2. ESTADO - Nombre de la Entidad Federativa.
+
+	3. ID_DISTRITO - Número del distrito electoral de la entidad.
+	
+	4. DISTRITO - Nombre del distrito electoral de la entidad.
+
+	5. SECCION - Número de sección correspondiente a la casilla.
+
+	6. ID_CASILLA - Número identificador de la casilla. 
+
+	7. TIPO_CASILLA - Tipo de casilla; B.- Básica, C.- Contigua, E.- Extraordinaria, S.- Especial
+
+	8. EXT_CONTIGUA - Número de casilla contigua a una extraordinaria.
+
+	9. UBICACION_CASILLA - Identifica el tipo de casilla y toma los siguientes valores:
+		1. Urbana
+		2. No Urbana
+
+	10. TIPO_ACTA - Especifica el tipo de Acta 
+		2.- Acta de casilla para Diputados de mayoría relativa
+		3.- Acta de casilla especial para Diputados de mayoría relativa
+		4.- Acta de casilla especial para Diputados de representación proporcional
+		
+	11.	NUM_BOLETAS_SOBRANTES - Total de boletas sobrantes 
+	
+	12.	TOTAL_CIUDADANOS_VOTARON - Total de ciudadanos que votaron
+	
+	13.	NUM_BOLETAS_EXTRAIDAS - Total de boletas sacadas de la urna
+
+	14.	CAND_IND_1 - Número de votos para el candidato independiente 1 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+	
+	15.	CAND_IND_2 - Número de votos para el candidato independiente 2 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+	
+	16.	CAND_IND_3 - Número de votos para el candidato independiente 3 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+	
+	17.	CAND_IND_4 - Número de votos para el candidato independiente 4 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+	
+	18.	CAND_IND_5 - Número de votos para el candidato independiente 5 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+
+	19.	CAND_IND_6 - Número de votos para el candidato independiente 6 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+
+	20.	CAND_IND_7 - Número de votos para el candidato independiente 7 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+
+	21.	CAND_IND_8 - Número de votos para el candidato independiente 8 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+
+	22.	CAND_IND_9 - Número de votos para el candidato independiente 9 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+
+	23.	CAND_IND_10 - Número de votos para el candidato independiente 10 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+
+	24.	CAND_IND_11 - Número de votos para el candidato independiente 11 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+	
+	25.	CAND_IND_12 - Número de votos para el candidato independiente 12 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+	
+	26.	CAND_IND_13 - Número de votos para el candidato independiente 13 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+	
+	27.	CAND_IND_14 - Número de votos para el candidato independiente 14 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+	
+	28.	CAND_IND_15 - Número de votos para el candidato independiente 15 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+
+	29.	CAND_IND_16 - Número de votos para el candidato independiente 16 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+
+	30.	CAND_IND_17 - Número de votos para el candidato independiente 17 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+
+	31.	CAND_IND_18 - Número de votos para el candidato independiente 18 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+
+	32.	CAND_IND_19 - Número de votos para el candidato independiente 19 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+
+	33.	CAND_IND_20 - Número de votos para el candidato independiente 20 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+
+	34.	CAND_IND_21 - Número de votos para el candidato independiente 21 (cuando el candidato independiente no existe en la entidad se indica con un guión “-”)
+
+	35.	PAN - Número de votos para el Partido Acción Nacional
+
+	36.	PRI - Número de votos para el Partido Revolucionario Institucional
+
+	37. 	PRD - Número de votos para el Partido de la Revolución Democrática
+
+	38.	PVEM - Número de votos para el Partido Verde Ecologista de México
+
+	39.	PT - Número de votos para el Partido del Trabajo
+
+	40. 	MOVIMIENTO_CIUDADANO - Número de votos para Movimiento Ciudadano
+
+	41. 	NUEVA_ALIANZA - Número de votos para Nueva Alianza
+
+	42.	MORENA - Número de votos para Morena
+	
+	43.	ENCUENTRO_SOCIAL - Número de votos para Encuentro Social
+	
+	44.	NULOS - Número de votos nulos
+
+	45.	TOTAL_VOTOS - Suma total de votos para la casilla (votos por partido, coalición, candidatos independientes, candidatos no registrados y nulos).
+		*****La suma se realiza automáticamente por el sistema del PREP con el fin de evitar errores de registro o aritméticos en las casillas.
+
+	46.	LISTA_NOMINAL -  Número de votantes posibles de acuerdo a la lista nominal.
+
+	47.	OBSERVACIONES - Indica con la leyenda:
+			Ilegible - La cantidad de votos es ilegible tanto en letra como en número en el Acta PREP -para partidos, coalición, candidato
+			independiente, candidatos no registrados o votos nulos- entonces cada ocurrencia del Acta PREP se captura como "Ilegible" y el dato se contabiliza
+			como cero. El Acta PREP se incluye dentro del grupo de actas contabilizadas.
+			Sin dato - La cantidad de votos no ha sido asentada en el Acta PREP -para partidos, coalición, candidato independiente, candidatos
+			no registrados o votos nulos- entonces cada ocurrencia del Acta PREP se captura como "Sin dato" y el dato se contabiliza como cero. El Acta PREP se
+			incluye dentro del grupo de actas contabilizadas.
+			Excede lista nominal - La suma de todos los votos en el Acta PREP excede el número de ciudadanos de la Lista Nominal de Electores de la casilla
+			electoral, incluido el número de representantes de partidos políticos y, en su caso, candidatos independientes acreditados –ambos ya sean locales
+			o federales-, motivo por lo cual los votos asentados no se contabilizan y el Acta PREP se incluye dentro del grupo de actas no contabilizadas.
+			Sin Acta (motivo) - Si el acta de escrutinio y cómputo no llegó junto con el paquete electoral al CATD respectivo por alguna de
+			los siguientes motivos:
+				1	Paquete no Entregado
+				2	Casilla no Instalada
+				3	Sin Sobre
+			No identificada - El Acta PREP contiene una omisión, ilegibilidad o error en alguno de los campos correspondientes a la identificación de
+			la casilla (entidad federativa, sección, distrito o tipo de casilla), en dicho supuesto se muestra al final del listado de actas y no se
+			contabiliza.
+			Identificación por otro medio - Actas cuyos datos de identificación no sea posible reconocer y sean incorporados mediante otros mecanismos,
+			en dicho supuesto los datos se contabilizan.
+
+	48.	CONTABILIZADA
+			-Obtiene el valor "1" cuando el acta es contabilizada
+			-Obtiene el valor "0" cuando el acta no es contabilizada. Si el acta no se contabiliza, se señala la razón en el campo de Observaciones.
+
+	49.	CRYT - Indica si el acta capturada proviene de un Centro de Recepción y Traslado (CRyT). 
+		Dichos CRyT se implementan en aquellos distritos en los que las condiciones geográficas, de infraestructura, 
+		sociopolíticas y/o meteorológicas dificultan significativamente el traslado directo a la Junta Distrital en tiempo y forma. 
+		Dichos centros concentran los paquetes electorales y los trasladan a las Juntas Distritales Ejecutivas. 
+		Los valores que puede tomar con Fijo (F) e Itinerante (I). 
+		
+	50.	SHA - Identificador asociado al archivo del acta digitalizada generado a través de la función criptográfica hash denominada SHA256.
+		Dicho identificador representa de manera única a cada imagen. Bajo esa función hash, cualquier modificación a dicho archivo -en este caso,
+		a la imagen del acta digitalizada- modifica también el identificador, asignando una cadena de caracteres completamente distinta a la original.
+
+		Para validar la autenticidad del acta digitalizada, se requiere de un software que permita obtener el código de integridad conforme al estándar SHA-256. 
+		
+		Para efectos de ejemplo, en los siguientes pasos se hace uso al software "md5deep-4.4" (software de código abierto accesible desde internet y que no tiene costo) para realizar la validación
+		de la autenticidad del acta digitalizada. Se considera el uso de un sistema de 64 bits con sistema operativo Microsft Windows.
+
+		1. Descargar el archivo "md5deep-4.4" ingresando en un navegador web la siguiente URL:
+
+			https://github.com/jessek/hashdeep/releases/download/v4.4/md5deep-4.4.zip
+			(Fecha de acceso a la URL: Mayo de 2016.)
+			
+		2. Ingresar al directorio donde se descargó el archivo.
+
+		3. Descomprimir el archivo "md5deep-4.4.zip".
+
+		4. Abrir una ventana para ingresar comandos (<Ctrl> + <R> e ingresar la cadena "cmd" seguida de la tecla "enter").
+
+		5. Navegar en la terminal hasta el directorio descomprimido.
+
+			C:> cd Downloads
+			C:\Downloads> cd md5deep-4.4
+			C:\Downloads\md5deep-4.4>
+
+		6. Ejecutar el archivo "sha256deep64.exe" pasando como parámetro el nombre del documento al cual se desea calcular el código de integridad. 
+		 
+			C:\Downloads\md5deep-4.4>sha256deep64.exe Acta.jpg 
+			4df3c3f68fcc83b27e9d42c90431a72499f17875c81a599b566c9889b9696703  C:\Downloads\EjemploActa.jpg
+   
+		7. Comparar el código obtenido mediante este procedimiento contra el campo "SHA" que se muestra en la Base de Datos.
+
+		   NOTA: Al momento de la realizar la verificación no es relevante que los caracteres sean mayúsculas o minúsculas, la única condición es que coincidan.
+		
+	51.	HORA_ACOPIO - Fecha y hora del CENTRO de México de recepción del sobre PREP con la copia del acta de escrutinio en el CATD.
+		
+	52.	HORA_CAPTURA - Fecha y hora de captura del acta en el CATD, la hora corresponde al tiempo del centro de México.
+
+	53.	HORA_REGISTRO - Fecha y hora de registro del acta en la base de datos, la hora corresponde al tiempo del centro de México.
+	
